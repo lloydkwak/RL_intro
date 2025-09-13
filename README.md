@@ -18,3 +18,7 @@ This repository is dedicated to learning Reinforcement Learning (RL) step by ste
 - Matplotlib
 
 - Jupyter Notebook (optional, for visualizations)
+
+# Resources
+Textbooks:
+- [Reinforcement Learning: An Introduction (2nd Edition)](http://incompleteideas.net/book/RLbook2018.pdf)
