@@ -11,7 +11,7 @@ This repository is dedicated to learning Reinforcement Learning (RL) step by ste
 - Provide clear explanations with code, math, and visualization.
 
 # Environment
-- Python 3.9+
+- Python 3.+
 
 - Numpy
 
