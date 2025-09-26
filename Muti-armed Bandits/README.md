@@ -36,17 +36,19 @@ As denominator goes to infinity $Q_t(a)$ converges to $q_*(a)$.
 
 # Incremental Implementation
 Concentrate on a single action
+
 $$Q_n\doteq \frac{R_1 + R_2 + \cdot\cdot\cdot + R_{n-1}}{n-1}$$
 - $Q_n$ : the estimate of its action value after it has been selected $n-1$ times
 - $R_i$ : the reward received after the $i$ th selection
 
 If this is done, then the memory and computational requirments would grow over time.
 
-$$Q_{n+1} = \frac{1}{n}\sum^{n-1}_{i=1}R_i
-\\=\frac{1}{n}(R_n + \sum^{n-1}_{i=1}R_i)
-\\=\frac{1}{n}(R_n + (n-1)\frac{1}{n-1}\sum^{n-1}_{i=1}R_i)\\=\frac{1}{n}(R_n + (n-1)Q_n)
-\\=\frac{1}{n}(R_n + nQ_n - Q_n)
-\\=Q_n + \frac{1}{n}[R_n-Q_n]$$
+$$Q_ {n+1} = \frac{1}{n}\sum^{n-1}_ {i=1}R_ i
+\\=\frac{1}{n}(R_ n + \sum^{n-1}_ {i=1}R_ i)
+\\=\frac{1}{n}(R_ n + (n-1)\frac{1}{n-1}\sum^{n-1}_ {i=1}R_ i)\\=\frac{1}{n}(R_ n + (n-1)Q_ n)
+\\=\frac{1}{n}(R_ n + nQ_ n - Q_ n)
+\\=Q_ n + \frac{1}{n}[R_ n-Q_ n]$$
+
 $$\downarrow$$
 ---
 ---
@@ -61,7 +63,10 @@ $$\downarrow$$
 - $N(a) \leftarrow 0$
 
 ### Loop forever:
-- $A \leftarrow \{^{argmax_aQ(a)\quad with\;probability\;1-\epsilon\quad(break\;ties\;random)}_{a\;random\;action\quad with\;probability\;\epsilon}$
+- $A \leftarrow \begin{cases}
+\arg\max_a Q(a) & \text{with probability } 1-\epsilon \text{ (break ties random)} \\
+\text{random action} & \text{with probability } \epsilon
+\end{cases}$
 - $R \leftarrow bandit(A)$ : take action $a$ and return reward
 - $N(A) \leftarrow N(A) + 1$
 - $Q(A) \leftarrow Q(A) + \frac{1}{N(A)}[R-Q(A)]$
