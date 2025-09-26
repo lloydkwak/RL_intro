@@ -45,15 +45,15 @@ If this is done, then the memory and computational requirments would grow over t
 
 $$Q_{n+1}
 = \frac{1}{n}\sum_{i=1}^{n-1}R_i
-\
+\\
 = \frac{1}{n}\bigl(R_n + \sum_{i=1}^{n-1}R_i\bigr)
-\
+\\
 = \frac{1}{n}\Bigl(R_n + (n-1)\tfrac{1}{n-1}\sum_{i=1}^{n-1}R_i\Bigr)
-\
+\\
 = \frac{1}{n}\bigl(R_n + (n-1)Q_n\bigr)
-\
+\\
 = \frac{1}{n}\bigl(R_n + nQ_n - Q_n\bigr)
-\
+\\
 = Q_n + \frac{1}{n}\bigl[R_n - Q_n\bigr]$$
 
 $$\downarrow$$
