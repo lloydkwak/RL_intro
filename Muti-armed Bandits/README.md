@@ -70,10 +70,7 @@ $$\downarrow$$
 - $N(a) \leftarrow 0$
 
 ### Loop forever:
-- $A \leftarrow \begin{cases}
-\arg\max_a Q(a) & \text{with probability } 1-\epsilon \text{ (break ties random)} \\
-\text{random action} & \text{with probability } \epsilon
-\end{cases}$
+- $A \leftarrow \arg\max_a Q(a)$ with probability $1-\epsilon$, otherwise random action with probability $\epsilon$
 - $R \leftarrow bandit(A)$ : take action $a$ and return reward
 - $N(A) \leftarrow N(A) + 1$
 - $Q(A) \leftarrow Q(A) + \frac{1}{N(A)}[R-Q(A)]$
